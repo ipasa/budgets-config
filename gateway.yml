@@ -16,30 +16,15 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
 
-  routes:
-    auth-service:
-        path: /uaa/**
-        url: http://auth-service:5000
-        stripPrefix: false
-        sensitiveHeaders:
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: http://account-service
+          predicates: 
+          - Path=/accounts/**
 
-    account-service:
-        path: /accounts/**
-        serviceId: account-service
-        stripPrefix: false
-        sensitiveHeaders:
-
-    statistics-service:
-        path: /statistics/**
-        serviceId: statistics-service
-        stripPrefix: false
-        sensitiveHeaders:
-
-    notification-service:
-        path: /notifications/**
-        serviceId: notification-service
-        stripPrefix: false
-        sensitiveHeaders:
 
 server:
   port: 4000
