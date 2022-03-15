@@ -21,7 +21,7 @@ spring:
     gateway:
       routes:
         - id: account-service
-          uri: http://account-service
+          uri: lb://account-service
           predicates: 
           - Path=/accounts/**
 
