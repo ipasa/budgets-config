@@ -13,7 +13,7 @@ spring:
       host: localhost
       username: user
       password: password
-      database: piggymetrics
+      database: piggymetrics-account-service
       port: 27017
 
 server:
