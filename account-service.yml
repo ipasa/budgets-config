@@ -11,7 +11,7 @@ spring:
   data:
     mongodb:
       host: localhost
-      username: user
+      username: user1
       password: password
       database: piggymetrics-account-service
       port: 27017
